@@ -1,0 +1,79 @@
+<div class="flex flex-col min-h-screen bg-[#111b21] font-sans antialiased selection:bg-[#00a884]/30 selection:text-[#00a884]">
+  <div class="flex flex-col items-center justify-center flex-grow p-4 sm:p-8">
+    
+    <%# Container %>
+    <div class="relative w-full max-w-md bg-[#202c33] rounded-[32px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] border border-white/5 overflow-hidden p-8 sm:p-12 animate-fade-in">
+      
+      <%# Background Glow %>
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-[#00a884]/10 blur-[80px] rounded-full pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#00a884]/5 blur-[80px] rounded-full pointer-events-none"></div>
+
+      <%# Header %>
+      <div class="relative z-10 mb-10 text-center">
+        <h1 className="text-4xl font-black leading-[0.85] tracking-tighter drop-shadow-[0_10px_50px_rgba(0,0,0,0.5)] mb-6">
+          <span className="text-white opacity-95">UNI</span>
+          <span className="text-[#00a884]">CHAT</span>
+        </h1>
+        <h2 class="text-2xl font-black text-[#e9edef] mb-3 tracking-tight">Nova Senha</h2>
+        <p class="text-[#8696a0] text-sm font-medium leading-relaxed">
+          Defina sua nova credencial de acesso.
+        </p>
+      </div>
+
+      <%# Form %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "space-y-6 relative z-10" }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="space-y-2 group">
+          <label class="text-[10px] font-black text-[#8696a0] uppercase tracking-[0.2em] ml-5 group-focus-within:text-[#00a884] transition-colors">
+            Nova Senha
+          </label>
+          <div class="relative">
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "••••••••", class: "w-full bg-[#111b21] border-2 border-transparent rounded-[24px] px-7 py-5 text-[#e9edef] placeholder:text-[#8696a0] focus:bg-[#2a3942] focus:border-[#00a884]/20 focus:ring-4 focus:ring-[#00a884]/5 transition-all outline-none font-medium text-xl tracking-widest" %>
+          </div>
+          <% if @minimum_password_length %>
+            <p class="text-[#8696a0]/60 text-[10px] font-bold ml-5 uppercase tracking-wider">(Mínimo <%= @minimum_password_length %> caracteres)</p>
+          <% end %>
+        </div>
+
+        <div class="space-y-2 group">
+          <label class="text-[10px] font-black text-[#8696a0] uppercase tracking-[0.2em] ml-5 group-focus-within:text-[#00a884] transition-colors">
+            Confirmar Senha
+          </label>
+          <div class="relative">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "••••••••", class: "w-full bg-[#111b21] border-2 border-transparent rounded-[24px] px-7 py-5 text-[#e9edef] placeholder:text-[#8696a0] focus:bg-[#2a3942] focus:border-[#00a884]/20 focus:ring-4 focus:ring-[#00a884]/5 transition-all outline-none font-medium text-xl tracking-widest" %>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <%= f.submit "Alterar Senha", class: "w-full bg-[#00a884] hover:bg-[#008f72] cursor-pointer active:scale-95 text-[#111b21] font-black uppercase tracking-[0.2em] py-5 rounded-[24px] shadow-2xl shadow-[#00a884]/20 hover:shadow-[#00a884]/40 transition-all duration-500 flex items-center justify-center gap-3 group overflow-hidden relative" %>
+        </div>
+      <% end %>
+
+      <%# Back Link %>
+      <div class="mt-8 text-center relative z-10">
+        <a href="/app/login" class="text-[11px] font-bold text-[#8696a0] hover:text-[#00a884] uppercase tracking-[0.2em] transition-colors flex items-center justify-center gap-2 group">
+          <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Voltar para Login
+        </a>
+      </div>
+
+    </div>
+    
+    <%# Footer %>
+    <div class="mt-8 text-[#00a884]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
+      Secured by Unichat Enterprise
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); filter: blur(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+  }
+  .animate-fade-in { animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+</style>

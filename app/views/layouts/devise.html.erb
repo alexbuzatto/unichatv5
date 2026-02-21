@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @global_config['INSTALLATION_NAME'].presence || 'Unichat' %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"/>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%# Branding Favicons %>
+    <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="<%= @global_config['LOGO_THUMBNAIL'] %>?v=1.2.3">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<%= @global_config['LOGO_THUMBNAIL'] %>?v=1.2.3">
+
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'application' %>
+  </head>
+  <body class="antialiased font-sans bg-[#111b21]">
+    <%= yield %>
+  </body>
+</html>

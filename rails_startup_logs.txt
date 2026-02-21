@@ -1,0 +1,79 @@
+﻿docker-compose : time=
+"2026-02-02T18:28:45-0
+3:00" level=warning ms
+g="C:\\Users\\Alex\\Do
+wnloads\\chatwoot-deve
+lop\\docker-compose.ya
+ml: the attribute 
+`version` is 
+obsolete, it will be 
+ignored, please 
+remove it to avoid 
+potential confusion"
+No linha:1 caractere:1
++ docker-compose logs 
+--tail=50 rails 2>&1 
+| Out-File -FilePath 
+rails_s ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (time="2026   
+ -02-0...tial conf    
+usion":String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+rails-1  | 	from /gems/ruby/3.4.0/gems/vite_ruby-3.8.0/lib/vite_ruby.rb:143:in 'ViteRuby#configure'
+rails-1  | 	from /gems/ruby/3.4.0/gems/vite_ruby-3.8.0/lib/vite_ruby.rb:134:in 'ViteRuby#config'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/forwardable.rb:240:in 'ViteRuby::Manifest#config'
+rails-1  | 	from /gems/ruby/3.4.0/gems/vite_ruby-3.8.0/lib/vite_ruby/manifest.rb:15:in 'ViteRuby::Manifest#initialize'
+rails-1  | 	from /gems/ruby/3.4.0/gems/vite_ruby-3.8.0/lib/vite_ruby.rb:148:in 'Class#new'
+rails-1  | 	from /gems/ruby/3.4.0/gems/vite_ruby-3.8.0/lib/vite_ruby.rb:148:in 'ViteRuby#manifest'
+rails-1  | 	from /gems/ruby/3.4.0/gems/vite_ruby-3.8.0/lib/vite_ruby.rb:44:in 'ViteRuby.bootstrap'
+rails-1  | 	from /gems/ruby/3.4.0/gems/vite_rails-3.0.17/lib/vite_rails/engine.rb:28:in 'block in <class:Engine>'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/initializable.rb:32:in 'BasicObject#instance_exec'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/initializable.rb:32:in 'Rails::Initializable::Initializer#run'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/initializable.rb:61:in 'block in Rails::Initializable#run_initializers'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:231:in 'block in TSort.tsort_each'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:353:in 'block (2 levels) in TSort.each_strongly_connected_component'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:434:in 'TSort.each_strongly_connected_component_from'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:352:in 'block in TSort.each_strongly_connected_component'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:350:in 'Rails::Initializable::Collection#each'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:350:in 'Method#call'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:350:in 'TSort.each_strongly_connected_component'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:229:in 'TSort.tsort_each'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/tsort.rb:208:in 'TSort#tsort_each'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/initializable.rb:60:in 'Rails::Initializable#run_initializers'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/application.rb:426:in 'Rails::Application#initialize!'
+rails-1  | 	from /app/config/environment.rb:5:in '<main>'
+rails-1  | 	from config.ru:3:in 'Kernel#require_relative'
+rails-1  | 	from config.ru:3:in 'block (2 levels) in <main>'
+rails-1  | 	from /gems/ruby/3.4.0/gems/rack-3.2.3/lib/rack/builder.rb:108:in 'Kernel#eval'
+rails-1  | 	from /gems/ruby/3.4.0/gems/rack-3.2.3/lib/rack/builder.rb:108:in 'Rack::Builder.new_from_string'
+rails-1  | 	from /gems/ruby/3.4.0/gems/rack-3.2.3/lib/rack/builder.rb:97:in 'Rack::Builder.load_file'
+rails-1  | 	from /gems/ruby/3.4.0/gems/rack-3.2.3/lib/rack/builder.rb:67:in 'Rack::Builder.parse_file'
+rails-1  | 	from /gems/ruby/3.4.0/gems/rackup-2.2.1/lib/rackup/server.rb:354:in 'Rackup::Server#build_app_and_options_from_config'
+rails-1  | 	from /gems/ruby/3.4.0/gems/rackup-2.2.1/lib/rackup/server.rb:263:in 'Rackup::Server#app'
+rails-1  | 	from /gems/ruby/3.4.0/gems/rackup-2.2.1/lib/rackup/server.rb:424:in 'Rackup::Server#wrapped_app'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/commands/server/server_command.rb:76:in 'Rails::Server#log_to_stdout'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/commands/server/server_command.rb:36:in 'Rails::Server#start'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/commands/server/server_command.rb:145:in 'block in Rails::Command::ServerCommand#perform'
+rails-1  | 	from <internal:kernel>:91:in 'Kernel#tap'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/commands/server/server_command.rb:136:in 'Rails::Command::ServerCommand#perform'
+rails-1  | 	from /gems/ruby/3.4.0/gems/thor-1.4.0/lib/thor/command.rb:28:in 'Thor::Command#run'
+rails-1  | 	from /gems/ruby/3.4.0/gems/thor-1.4.0/lib/thor/invocation.rb:127:in 'Thor::Invocation#invoke_command'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/command/base.rb:178:in 'Rails::Command::Base#invoke_command'
+rails-1  | 	from /gems/ruby/3.4.0/gems/thor-1.4.0/lib/thor.rb:538:in 'Thor.dispatch'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/command/base.rb:73:in 'Rails::Command::Base.perform'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/command.rb:71:in 'block in Rails::Command.invoke'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/command.rb:149:in 'Rails::Command.with_argv'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/command.rb:69:in 'Rails::Command.invoke'
+rails-1  | 	from /gems/ruby/3.4.0/gems/railties-7.1.5.2/lib/rails/commands.rb:18:in '<main>'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/bundled_gems.rb:82:in 'Kernel.require'
+rails-1  | 	from /usr/local/lib/ruby/3.4.0/bundled_gems.rb:82:in 'block (2 levels) in Kernel#replace_require'
+rails-1  | 	from /gems/ruby/3.4.0/gems/bootsnap-1.16.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in 'Kernel#require'
+rails-1  | 	from bin/rails:4:in '<main>'

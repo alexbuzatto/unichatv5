@@ -1,0 +1,262 @@
+const { yellow, yellowDark, red, redDark } = require('@radix-ui/colors');
+
+export const colors = {
+  // [WHATSAPP THEME] Overriding Default Palette
+  woot: {
+    25: '#eefcf9', // Very light teal tint
+    50: '#daF8f3',
+    75: '#cbf6ef',
+    100: '#b2f0e6',
+    200: '#80e3d2',
+    300: '#4dd6be', // Lighter Teal
+    400: '#26c9aa', // Soft Teal
+    500: '#00a884', // WhatsApp Primary Teal (Brand)
+    600: '#008f72', // Darker Teal (Hover)
+    700: '#00705a',
+    800: '#0c4a3f', // Deepest Teal (Sidebar/Dark mode)
+    900: '#08322b',
+  },
+  green: {
+    ...Object.fromEntries(
+      Object.entries({
+        50: '#f0fdf4',
+        100: '#dcfce7',
+        200: '#bbf7d0',
+        300: '#86efac',
+        400: '#4ade80',
+        500: '#00a884', // Sync with Primary
+        600: '#16a34a',
+        700: '#15803d',
+        800: '#166534',
+        900: '#14532d',
+      })
+    ),
+  },
+  blue: {
+    ...Object.fromEntries(
+      Object.entries({
+        50: '#eff6ff',
+        100: '#dbeafe',
+        200: '#bfdbfe',
+        300: '#93c5fd',
+        400: '#60a5fa',
+        500: '#3b82f6',
+        600: '#2563eb',
+        700: '#1d4ed8',
+        800: '#1e40af',
+        900: '#1e3a8a',
+      })
+    ),
+  },
+  yellow: {
+    50: yellow.yellow2,
+    100: yellow.yellow3,
+    200: yellow.yellow5,
+    300: yellowDark.yellow10,
+    400: yellowDark.yellow9,
+    500: yellowDark.yellow11,
+    600: yellow.yellow8,
+    700: yellowDark.yellow7,
+    800: yellowDark.yellow2,
+    900: yellowDark.yellow1,
+  },
+  slate: {
+    25: '#fcfcfc',
+    50: '#f0f2f5', // WhatsApp Chat Background
+    75: '#e9edef', // WhatsApp Header Background (Light)
+    100: '#d1d7db', // WhatsApp Message Input
+    200: '#e2e8f0',
+    300: '#cbd5e1',
+    400: '#94a3b8',
+    500: '#64748b',
+    600: '#475569',
+    700: '#334155',
+    800: '#1e293b',
+    900: '#111b21', // WhatsApp Dark Mode Base
+  },
+  black: {
+    50: 'rgb(var(--gray-1) / <alpha-value>)',
+    100: 'rgb(var(--gray-2) / <alpha-value>)',
+    200: 'rgb(var(--gray-3) / <alpha-value>)',
+    300: 'rgb(var(--gray-4) / <alpha-value>)',
+    400: 'rgb(var(--gray-5) / <alpha-value>)',
+    500: 'rgb(var(--gray-6) / <alpha-value>)',
+    600: 'rgb(var(--gray-7) / <alpha-value>)',
+    700: 'rgb(var(--gray-8) / <alpha-value>)',
+    800: 'rgb(var(--gray-9) / <alpha-value>)',
+    900: 'rgb(var(--gray-12) / <alpha-value>)',
+  },
+  red: {
+    50: redDark.red12,
+    100: red.red6,
+    200: red.red8,
+    300: redDark.red11,
+    400: redDark.red10,
+    500: red.red9,
+    600: red.red10,
+    700: red.red11,
+    800: redDark.red8,
+    900: red.red12,
+  },
+  violet: {
+    50: 'rgb(var(--violet-1) / <alpha-value>)',
+    100: 'rgb(var(--violet-2) / <alpha-value>)',
+    200: 'rgb(var(--violet-3) / <alpha-value>)',
+    300: 'rgb(var(--violet-4) / <alpha-value>)',
+    400: 'rgb(var(--violet-5) / <alpha-value>)',
+    500: 'rgb(var(--violet-6) / <alpha-value>)',
+    600: 'rgb(var(--violet-7) / <alpha-value>)',
+    700: 'rgb(var(--violet-8) / <alpha-value>)',
+    800: 'rgb(var(--violet-9) / <alpha-value>)',
+    900: 'rgb(var(--violet-10) / <alpha-value>)',
+  },
+
+  // next design system color
+  n: {
+    slate: {
+      1: 'rgb(var(--slate-1) / <alpha-value>)',
+      2: 'rgb(var(--slate-2) / <alpha-value>)',
+      3: 'rgb(var(--slate-3) / <alpha-value>)',
+      4: 'rgb(var(--slate-4) / <alpha-value>)',
+      5: 'rgb(var(--slate-5) / <alpha-value>)',
+      6: 'rgb(var(--slate-6) / <alpha-value>)',
+      7: 'rgb(var(--slate-7) / <alpha-value>)',
+      8: 'rgb(var(--slate-8) / <alpha-value>)',
+      9: 'rgb(var(--slate-9) / <alpha-value>)',
+      10: 'rgb(var(--slate-10) / <alpha-value>)',
+      11: 'rgb(var(--slate-11) / <alpha-value>)',
+      12: 'rgb(var(--slate-12) / <alpha-value>)',
+    },
+
+    iris: {
+      1: 'rgb(var(--iris-1) / <alpha-value>)',
+      2: 'rgb(var(--iris-2) / <alpha-value>)',
+      3: 'rgb(var(--iris-3) / <alpha-value>)',
+      4: 'rgb(var(--iris-4) / <alpha-value>)',
+      5: 'rgb(var(--iris-5) / <alpha-value>)',
+      6: 'rgb(var(--iris-6) / <alpha-value>)',
+      7: 'rgb(var(--iris-7) / <alpha-value>)',
+      8: 'rgb(var(--iris-8) / <alpha-value>)',
+      9: 'rgb(var(--iris-9) / <alpha-value>)',
+      10: 'rgb(var(--iris-10) / <alpha-value>)',
+      11: 'rgb(var(--iris-11) / <alpha-value>)',
+      12: 'rgb(var(--iris-12) / <alpha-value>)',
+    },
+
+    blue: {
+      1: 'rgb(var(--blue-1) / <alpha-value>)',
+      2: 'rgb(var(--blue-2) / <alpha-value>)',
+      3: 'rgb(var(--blue-3) / <alpha-value>)',
+      4: 'rgb(var(--blue-4) / <alpha-value>)',
+      5: 'rgb(var(--blue-5) / <alpha-value>)',
+      6: 'rgb(var(--blue-6) / <alpha-value>)',
+      7: 'rgb(var(--blue-7) / <alpha-value>)',
+      8: 'rgb(var(--blue-8) / <alpha-value>)',
+      9: 'rgb(var(--blue-9) / <alpha-value>)',
+      10: 'rgb(var(--blue-10) / <alpha-value>)',
+      11: 'rgb(var(--blue-11) / <alpha-value>)',
+      12: 'rgb(var(--blue-12) / <alpha-value>)',
+    },
+
+    ruby: {
+      1: 'rgb(var(--ruby-1) / <alpha-value>)',
+      2: 'rgb(var(--ruby-2) / <alpha-value>)',
+      3: 'rgb(var(--ruby-3) / <alpha-value>)',
+      4: 'rgb(var(--ruby-4) / <alpha-value>)',
+      5: 'rgb(var(--ruby-5) / <alpha-value>)',
+      6: 'rgb(var(--ruby-6) / <alpha-value>)',
+      7: 'rgb(var(--ruby-7) / <alpha-value>)',
+      8: 'rgb(var(--ruby-8) / <alpha-value>)',
+      9: 'rgb(var(--ruby-9) / <alpha-value>)',
+      10: 'rgb(var(--ruby-10) / <alpha-value>)',
+      11: 'rgb(var(--ruby-11) / <alpha-value>)',
+      12: 'rgb(var(--ruby-12) / <alpha-value>)',
+    },
+
+    amber: {
+      1: 'rgb(var(--amber-1) / <alpha-value>)',
+      2: 'rgb(var(--amber-2) / <alpha-value>)',
+      3: 'rgb(var(--amber-3) / <alpha-value>)',
+      4: 'rgb(var(--amber-4) / <alpha-value>)',
+      5: 'rgb(var(--amber-5) / <alpha-value>)',
+      6: 'rgb(var(--amber-6) / <alpha-value>)',
+      7: 'rgb(var(--amber-7) / <alpha-value>)',
+      8: 'rgb(var(--amber-8) / <alpha-value>)',
+      9: 'rgb(var(--amber-9) / <alpha-value>)',
+      10: 'rgb(var(--amber-10) / <alpha-value>)',
+      11: 'rgb(var(--amber-11) / <alpha-value>)',
+      12: 'rgb(var(--amber-12) / <alpha-value>)',
+    },
+
+    teal: {
+      1: 'rgb(var(--teal-1) / <alpha-value>)',
+      2: 'rgb(var(--teal-2) / <alpha-value>)',
+      3: 'rgb(var(--teal-3) / <alpha-value>)',
+      4: 'rgb(var(--teal-4) / <alpha-value>)',
+      5: 'rgb(var(--teal-5) / <alpha-value>)',
+      6: 'rgb(var(--teal-6) / <alpha-value>)',
+      7: 'rgb(var(--teal-7) / <alpha-value>)',
+      8: 'rgb(var(--teal-8) / <alpha-value>)',
+      9: 'rgb(var(--teal-9) / <alpha-value>)',
+      10: 'rgb(var(--teal-10) / <alpha-value>)',
+      11: 'rgb(var(--teal-11) / <alpha-value>)',
+      12: 'rgb(var(--teal-12) / <alpha-value>)',
+    },
+
+    gray: {
+      1: 'rgb(var(--gray-1) / <alpha-value>)',
+      2: 'rgb(var(--gray-2) / <alpha-value>)',
+      3: 'rgb(var(--gray-3) / <alpha-value>)',
+      4: 'rgb(var(--gray-4) / <alpha-value>)',
+      5: 'rgb(var(--gray-5) / <alpha-value>)',
+      6: 'rgb(var(--gray-6) / <alpha-value>)',
+      7: 'rgb(var(--gray-7) / <alpha-value>)',
+      8: 'rgb(var(--gray-8) / <alpha-value>)',
+      9: 'rgb(var(--gray-9) / <alpha-value>)',
+      10: 'rgb(var(--gray-10) / <alpha-value>)',
+      11: 'rgb(var(--gray-11) / <alpha-value>)',
+      12: 'rgb(var(--gray-12) / <alpha-value>)',
+    },
+
+    violet: {
+      1: 'rgb(var(--violet-1) / <alpha-value>)',
+      2: 'rgb(var(--violet-2) / <alpha-value>)',
+      3: 'rgb(var(--violet-3) / <alpha-value>)',
+      4: 'rgb(var(--violet-4) / <alpha-value>)',
+      5: 'rgb(var(--violet-5) / <alpha-value>)',
+      6: 'rgb(var(--violet-6) / <alpha-value>)',
+      7: 'rgb(var(--violet-7) / <alpha-value>)',
+      8: 'rgb(var(--violet-8) / <alpha-value>)',
+      9: 'rgb(var(--violet-9) / <alpha-value>)',
+      10: 'rgb(var(--violet-10) / <alpha-value>)',
+      11: 'rgb(var(--violet-11) / <alpha-value>)',
+      12: 'rgb(var(--violet-12) / <alpha-value>)',
+    },
+
+    black: '#000000',
+    brand: 'rgb(var(--solid-active) / <alpha-value>)',
+    background: 'rgb(var(--background-color) / <alpha-value>)',
+    solid: {
+      1: 'rgb(var(--solid-1) / <alpha-value>)',
+      2: 'rgb(var(--solid-2) / <alpha-value>)',
+      3: 'rgb(var(--solid-3) / <alpha-value>)',
+      active: 'rgb(var(--solid-active) / <alpha-value>)',
+      amber: 'rgb(var(--solid-amber) / <alpha-value>)',
+      blue: 'rgb(var(--solid-blue) / <alpha-value>)',
+      iris: 'rgb(var(--solid-iris) / <alpha-value>)',
+    },
+    alpha: {
+      1: 'rgba(var(--alpha-1))',
+      2: 'rgba(var(--alpha-2))',
+      3: 'rgba(var(--alpha-3))',
+      black1: 'rgba(var(--black-alpha-1))',
+      black2: 'rgba(var(--black-alpha-2))',
+      white: 'rgba(var(--white-alpha))',
+    },
+    weak: 'rgb(var(--slate-8) / <alpha-value>)',
+    container: 'rgb(var(--border-container) / <alpha-value>)',
+    strong: 'rgb(var(--border-strong) / <alpha-value>)',
+    'blue-border': 'rgb(var(--border-blue) / <alpha-value>)',
+    'blue-text': 'rgb(var(--text-blue) / <alpha-value>)',
+  },
+};

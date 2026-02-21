@@ -1,0 +1,82 @@
+@import 'shared/assets/fonts/inter';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  font-family: Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+@layer base {
+  @import '../next-colors';
+}
+
+@layer components {
+  .main-content {
+    @apply bg-n-background text-n-slate-12 min-h-screen;
+  }
+
+  .main-content__header {
+    @apply bg-n-solid-1 border-b border-n-weak p-6 flex-shrink-0;
+  }
+
+  .main-content__body {
+    @apply p-6;
+
+    &--flush {
+      @apply p-0;
+    }
+  }
+
+  .main-content__page-title {
+    @apply text-2xl font-semibold text-n-slate-12;
+  }
+
+  table {
+    @apply w-full border-collapse bg-n-solid-1;
+
+    th.cell-label {
+      @apply bg-n-alpha-1 text-n-slate-11 uppercase tracking-wider text-[10px] font-bold py-3 px-4 text-left border-b border-n-weak;
+
+      a {
+        @apply text-n-slate-11 hover:text-n-brand;
+      }
+    }
+
+    td.cell-data {
+      @apply py-3 px-4 border-b border-n-weak text-n-slate-12 text-sm;
+
+      a.action-show {
+        @apply text-n-slate-12 hover:text-n-brand;
+      }
+    }
+
+    tr.js-table-row {
+      @apply hover:bg-n-alpha-1 transition-colors;
+    }
+  }
+
+  .button,
+  .action-edit,
+  .action-show,
+  .action-new {
+    @apply inline-flex items-center px-4 py-2 border border-n-weak rounded-lg text-sm font-medium text-n-slate-12 bg-n-solid-2 hover:bg-n-alpha-1 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-n-brand disabled:opacity-50;
+
+    &.button--danger {
+      @apply text-n-ruby-9 hover:bg-n-ruby-9 hover:text-white border-n-ruby-8;
+    }
+  }
+
+  .text-color-red {
+    @apply text-n-ruby-9 hover:text-n-ruby-10 font-medium;
+  }
+
+  // Administrate Search & Filters
+  .search {
+    @apply relative flex items-center;
+
+    &__input {
+      @apply bg-n-alpha-black2 border-n-weak text-n-slate-12 placeholder:text-n-slate-10 rounded-lg py-2 pl-10 pr-4 focus:ring-n-brand focus:border-n-brand;
+    }
+  }
+}

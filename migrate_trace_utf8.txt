@@ -1,0 +1,519 @@
+﻿docker-compose : time=
+"2026-02-02T11:53:40-0
+3:00" level=warning ms
+g="C:\\Users\\Alex\\Do
+wnloads\\chatwoot-deve
+lop\\docker-compose.ya
+ml: the attribute 
+`version` is 
+obsolete, it will be 
+ignored, please 
+remove it to avoid 
+potential confusion"
+No linha:1 caractere:1
++ docker-compose run 
+--rm rails bundle 
+exec rake db:migrate 
+--trace > m ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (time="2026   
+ -02-0...tial conf    
+usion":String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+time="2026-02-02T11:53
+:40-03:00" 
+level=warning 
+msg="Found orphan 
+containers ([chatwoot-
+develop-rails-run-393a
+e5bf6b02 chatwoot-deve
+lop-rails-run-df486d59
+2355 chatwoot-develop-
+rails-run-85c2f3953646
+ chatwoot-develop-rail
+s-run-469a3bfaa7e5 cha
+twoot-develop-rails-ru
+n-8ad5dac2f899 chatwoo
+t-develop-rails-run-f8
+40384795f8]) for this 
+project. If you 
+removed or renamed 
+this service in your 
+compose file, you can 
+run this command with 
+the --remove-orphans 
+flag to clean it up."
+ Container chatwoot-de
+velop-postgres-1  
+Running
+ Container chatwoot-de
+velop-mailhog-1  
+Running
+ Container chatwoot-de
+velop-redis-1  Running
+ Container chatwoot-de
+velop-sidekiq-1  
+Starting
+ Container chatwoot-de
+velop-sidekiq-1  
+Started
++ rm -rf /app/tmp/pids
+/server.pid
++ rm -rf /app/tmp/cach
+e/bootsnap
++ echo 'Waiting for 
+postgres to become 
+ready....'
++ docker/entrypoints/h
+elpers/pg_database_url
+.rb
+Waiting for postgres to become ready....
++ export 
+'POSTGRES_PORT=5432'
++ 
+PG_READY='pg_isready 
+-h postgres -p 5432 
+-U postgres'
++ pg_isready -h 
+postgres -p 5432 -U 
+postgres
+postgres:5432 - accepting connections
++ echo 'Database 
+ready to accept 
+connections.'
++ bundle install
+Database ready to accept connections.
+Bundle complete! 145 Gemfile dependencies, 365 gems now installed.
+Bundled gems are installed into `/gems`
+3 installed gems you directly depend on are looking for funding.
+  Run `bundle fund` for details
++ BUNDLE='bundle 
+check'
++ bundle check
+The Gemfile's dependencies are satisfied
++ exec bundle exec 
+rake db:migrate 
+--trace
+/gems/ruby/3.4.0/gems/
+reline-0.3.6/lib/relin
+e/terminfo.rb:2: 
+warning: /usr/local/li
+b/ruby/3.4.0/fiddle.rb
+ was loaded from the 
+standard library, but 
+will no longer be 
+part of the default 
+gems starting from 
+Ruby 3.5.0.
+You can add fiddle to 
+your Gemfile or 
+gemspec to silence 
+this warning.
+Also please contact 
+the author of 
+reline-0.3.6 to 
+request adding fiddle 
+into its gemspec.
+** Invoke db:migrate 
+(first_time)
+** Invoke 
+db:load_config 
+(first_time)
+** Invoke environment 
+(first_time)
+** Execute environment
+E, [2026-02-02T14:53:52.889285 #1] ERROR -- : Failed to check mode for Vite: vite-plugin-ruby@5.1.2 might not be compatible with vite_ruby-3.8.0
+
+You may disable this check if needed: https://vite-ruby.netlify.app/config/#skipcompatibilitycheck
+
+You may upgrade both by running:
+
+    bundle exec vite upgrade
+
+rake aborted!
+ArgumentError: vite-pl
+ugin-ruby@5.1.2 might 
+not be compatible 
+with vite_ruby-3.8.0 
+(ArgumentError)
+
+You may disable this 
+check if needed: https
+://vite-ruby.netlify.a
+pp/config/#skipcompati
+bilitycheck
+
+You may upgrade both 
+by running:
+
+    bundle exec vite 
+upgrade
+
+
+        raise 
+ArgumentError, 
+<<~ERROR
+              ^^^^^^^^
+^^^^^^^^^^^^^^^
+/gems/ruby/3.4.0/gems/
+vite_ruby-3.8.0/lib/vi
+te_ruby/compatibility_
+check.rb:24:in 'ViteRu
+by::CompatibilityCheck
+.raise_unless_satisfie
+d'
+/gems/ruby/3.4.0/gems/
+vite_ruby-3.8.0/lib/vi
+te_ruby/compatibility_
+check.rb:18:in 'ViteRu
+by::CompatibilityCheck
+.verify_plugin_version
+'
+/gems/ruby/3.4.0/gems/
+vite_ruby-3.8.0/lib/vi
+te_ruby/config.rb:122:
+in 'ViteRuby::Config#i
+nitialize'
+/gems/ruby/3.4.0/gems/
+vite_ruby-3.8.0/lib/vi
+te_ruby/config.rb:133:
+in 'Class#new'
+/gems/ruby/3.4.0/gems/
+vite_ruby-3.8.0/lib/vi
+te_ruby/config.rb:133:
+in 'ViteRuby::Config.r
+esolve_config'
+/gems/ruby/3.4.0/gems/
+vite_ruby-3.8.0/lib/vi
+te_ruby.rb:143:in 
+'ViteRuby#configure'
+/gems/ruby/3.4.0/gems/
+vite_ruby-3.8.0/lib/vi
+te_ruby.rb:134:in 
+'ViteRuby#config'
+/usr/local/lib/ruby/3.
+4.0/forwardable.rb:240
+:in 'ViteRuby.config'
+/gems/ruby/3.4.0/gems/
+vite_rails-3.0.17/lib/
+vite_rails/engine.rb:3
+8:in 'block in 
+<class:Engine>'
+/gems/ruby/3.4.0/gems/
+railties-7.1.5.2/lib/r
+ails/initializable.rb:
+32:in 'BasicObject#ins
+tance_exec'
+/gems/ruby/3.4.0/gems/
+railties-7.1.5.2/lib/r
+ails/initializable.rb:
+32:in 'Rails::Initiali
+zable::Initializer#run
+'
+/gems/ruby/3.4.0/gems/
+railties-7.1.5.2/lib/r
+ails/initializable.rb:
+61:in 'block in Rails:
+:Initializable#run_ini
+tializers'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:231:in 
+'block in 
+TSort.tsort_each'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:353:in 
+'block (2 levels) in T
+Sort.each_strongly_con
+nected_component'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:434:in 'T
+Sort.each_strongly_con
+nected_component_from'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:352:in 
+'block in TSort.each_s
+trongly_connected_comp
+onent'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:350:in 'R
+ails::Initializable::C
+ollection#each'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:350:in 
+'Method#call'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:350:in 'T
+Sort.each_strongly_con
+nected_component'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:229:in 
+'TSort.tsort_each'
+/usr/local/lib/ruby/3.
+4.0/tsort.rb:208:in 
+'TSort#tsort_each'
+/gems/ruby/3.4.0/gems/
+railties-7.1.5.2/lib/r
+ails/initializable.rb:
+60:in 'Rails::Initiali
+zable#run_initializers
+'
+/gems/ruby/3.4.0/gems/
+railties-7.1.5.2/lib/r
+ails/application.rb:42
+6:in 'Rails::Applicati
+on#initialize!'
+/app/config/environmen
+t.rb:5:in '<main>'
+/usr/local/lib/ruby/3.
+4.0/bundled_gems.rb:82
+:in 'Kernel.require'
+/usr/local/lib/ruby/3.
+4.0/bundled_gems.rb:82
+:in 'block (2 levels) 
+in Kernel#replace_requ
+ire'
+/gems/ruby/3.4.0/gems/
+bootsnap-1.16.0/lib/bo
+otsnap/load_path_cache
+/core_ext/kernel_requi
+re.rb:32:in 
+'Kernel#require'
+/gems/ruby/3.4.0/gems/
+zeitwerk-2.6.17/lib/ze
+itwerk/kernel.rb:34:in
+ 'Kernel#require'
+/gems/ruby/3.4.0/gems/
+railties-7.1.5.2/lib/r
+ails/application.rb:40
+2:in 'Rails::Applicati
+on#require_environment
+!'
+/gems/ruby/3.4.0/gems/
+railties-7.1.5.2/lib/r
+ails/application.rb:59
+1:in 'block in Rails::
+Application#run_tasks_
+blocks'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:281:in 'block 
+in Rake::Task#execute'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:281:in 
+'Array#each'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:281:in 
+'Rake::Task#execute'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:219:in 'block 
+in Rake::Task#invoke_w
+ith_call_chain'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:199:in 
+'Monitor#synchronize'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:199:in 'Rake::T
+ask#invoke_with_call_c
+hain'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:243:in 'block 
+in Rake::Task#invoke_p
+rerequisites'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:241:in 
+'Array#each'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:241:in 'Rake::T
+ask#invoke_prerequisit
+es'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:218:in 'block 
+in Rake::Task#invoke_w
+ith_call_chain'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:199:in 
+'Monitor#synchronize'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:199:in 'Rake::T
+ask#invoke_with_call_c
+hain'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:243:in 'block 
+in Rake::Task#invoke_p
+rerequisites'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:241:in 
+'Array#each'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:241:in 'Rake::T
+ask#invoke_prerequisit
+es'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:218:in 'block 
+in Rake::Task#invoke_w
+ith_call_chain'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:199:in 
+'Monitor#synchronize'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:199:in 'Rake::T
+ask#invoke_with_call_c
+hain'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/t
+ask.rb:188:in 
+'Rake::Task#invoke'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:188:in '
+Rake::Application#invo
+ke_task'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:138:in 
+'block (2 levels) in R
+ake::Application#top_l
+evel'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:138:in 
+'Array#each'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:138:in 
+'block in Rake::Applic
+ation#top_level'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:147:in '
+Rake::Application#run_
+with_threads'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:132:in '
+Rake::Application#top_
+level'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:83:in 
+'block in 
+Rake::Application#run'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:214:in '
+Rake::Application#stan
+dard_exception_handlin
+g'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/lib/rake/a
+pplication.rb:80:in 'R
+ake::Application#run'
+/gems/ruby/3.4.0/gems/
+rake-13.2.1/exe/rake:2
+7:in '<top 
+(required)>'
+/gems/ruby/3.4.0/bin/r
+ake:25:in 
+'Kernel#load'
+/gems/ruby/3.4.0/bin/r
+ake:25:in '<top 
+(required)>'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/cli/exec.rb:58:i
+n 'Kernel.load'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/cli/exec.rb:58:i
+n 'Bundler::CLI::Exec#
+kernel_load'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/cli/exec.rb:23:i
+n 'Bundler::CLI::Exec#
+run'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/cli.rb:455:in 
+'Bundler::CLI#exec'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/vendor/thor/lib/
+thor/command.rb:28:in 
+'Bundler::Thor::Comman
+d#run'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/vendor/thor/lib/
+thor/invocation.rb:127
+:in 'Bundler::Thor::In
+vocation#invoke_comman
+d'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/vendor/thor/lib/
+thor.rb:527:in 'Bundle
+r::Thor.dispatch'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/cli.rb:35:in 'Bu
+ndler::CLI.dispatch'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/vendor/thor/lib/
+thor/base.rb:584:in 'B
+undler::Thor::Base::Cl
+assMethods#start'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/cli.rb:29:in 
+'Bundler::CLI.start'
+/usr/local/bundle/gems
+/bundler-2.5.16/exe/bu
+ndle:28:in 'block in 
+<top (required)>'
+/usr/local/bundle/gems
+/bundler-2.5.16/lib/bu
+ndler/friendly_errors.
+rb:117:in 'Bundler.wit
+h_friendly_errors'
+/usr/local/bundle/gems
+/bundler-2.5.16/exe/bu
+ndle:20:in '<top 
+(required)>'
+/usr/local/bundle/bin/
+bundle:25:in 
+'Kernel#load'
+/usr/local/bundle/bin/
+bundle:25:in '<main>'
+Tasks: TOP => 
+db:migrate => 
+db:load_config => 
+environment
+

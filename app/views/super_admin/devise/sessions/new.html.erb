@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>SuperAdmin | UNICHAT</title>
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'superadmin' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  </head>
+  <body class="min-h-screen bg-slate-950 flex items-center justify-center p-4 sm:p-8 font-sans antialiased overflow-hidden selection:bg-emerald-500/30">
+    <!-- Container Principal -->
+    <div class="relative w-full max-w-6xl aspect-[16/9] bg-white rounded-[50px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] flex flex-col md:flex-row overflow-hidden animate-fade-in border border-white/10">
+      
+      <!-- Lado Esquerdo - Branding/Visual (Intensified Green) -->
+      <div class="relative w-full md:w-1/2 bg-slate-900 overflow-hidden flex flex-col p-12">
+        <!-- Grainy Noise Texture -->
+        <div class="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150 mix-blend-overlay"></div>
+        
+        <!-- Deep Emerald Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-950 to-emerald-900/40"></div>
+
+        <!-- Glowing Elements -->
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-emerald-500/20 blur-[100px] rounded-full animate-pulse-slow"></div>
+        <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] bg-emerald-600/10 blur-[120px] rounded-full animate-float"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05)_0%,transparent_70%)]"></div>
+
+        <!-- Logo Glassmorphism Box -->
+        <div class="relative z-10 self-start mb-auto">
+          <div class="bg-white/10 backdrop-blur-3xl border border-white/20 p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex items-center justify-center group hover:scale-105 transition-transform duration-500">
+            <svg class="w-10 h-10 text-emerald-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.5)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Brutalist Typography - High Contrast -->
+        <div class="relative z-10 mt-auto mb-12">
+          <h1 class="text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter drop-shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
+            <span class="text-white opacity-95 text-nowrap">UNI</span><br />
+            <span class="text-emerald-500 animate-glow text-nowrap">CHAT</span>
+          </h1>
+          <div class="text-[10px] text-emerald-400/60 font-black uppercase tracking-[0.8em] mt-4 ml-2">
+            Super Admin Portal
+          </div>
+        </div>
+
+        <!-- Footer Status Indicators -->
+        <div class="relative z-10 flex items-center gap-6">
+           <div class="flex items-center gap-3 text-emerald-400/60 text-[11px] uppercase font-bold tracking-[0.5em] backdrop-blur-sm bg-black/20 py-2 px-4 rounded-full border border-emerald-500/10">
+              <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,1)] animate-pulse"></div>
+              SISTEMA ONLINE
+           </div>
+           <div class="text-white/20 text-[10px] uppercase font-medium tracking-[0.4em]">
+              V4.10.1 // ADMIN-SEC
+           </div>
+        </div>
+      </div>
+
+      <!-- Lado Direito - Formulário Minimalista com Sotaque Verde -->
+      <div class="w-full md:w-1/2 bg-white flex flex-col p-12 lg:p-20 relative overflow-hidden">
+        <!-- Subtle background glow -->
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-50/50 blur-[80px] rounded-full pointer-events-none"></div>
+        
+        <div class="w-full max-w-sm mx-auto my-auto relative z-10">
+          <div class="mb-10 text-center md:text-left">
+             <h2 class="text-4xl font-black text-slate-900 mb-3 tracking-tight">Acesso de Segurança</h2>
+             <p class="text-slate-500 text-sm font-medium leading-relaxed">Verificação de identidade necessária para o nó <span class="text-emerald-600 font-bold underline decoration-emerald-200 underline-offset-4">UNICHAT</span> (Admin).</p>
+          </div>
+
+          <%= form_for(resource, as: resource_name, url: '/super_admin/sign_in', html: { class: "space-y-6" }) do |f| %>
+            <% if flash[:error].present? %>
+              <div class="rounded-[24px] bg-rose-50 border border-rose-100 p-4 text-rose-600 text-[11px] font-black uppercase tracking-wider mb-6 text-center animate-shake">
+                <%= flash[:error] %>
+              </div>
+            <% end %>
+
+            <div class="space-y-2 group">
+              <label class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-5 group-focus-within:text-emerald-500 transition-colors">Identidade Digital</label>
+              <div class="relative">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "admin@unichat.com", class: "w-full bg-slate-50 border-2 border-transparent rounded-[24px] px-7 py-5 text-slate-900 placeholder:text-slate-300 focus:bg-white focus:border-emerald-500/20 focus:ring-4 focus:ring-emerald-500/5 transition-all outline-none font-medium text-sm" %>
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 text-slate-200 group-focus-within:text-emerald-500/30 transition-colors">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" /></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 group">
+              <div class="flex justify-between items-center px-5">
+                <label class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] group-focus-within:text-emerald-500 transition-colors">Token Secreto</label>
+              </div>
+              <div class="relative">
+                <%= f.password_field :password, autocomplete: "current-password", placeholder: "••••••••", class: "w-full bg-slate-50 border-2 border-transparent rounded-[24px] px-7 py-5 text-slate-900 placeholder:text-slate-300 focus:bg-white focus:border-emerald-500/20 focus:ring-4 focus:ring-emerald-500/5 transition-all outline-none font-medium text-sm tracking-widest" %>
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 text-slate-200 group-focus-within:text-emerald-500/30 transition-colors">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-slate-900 hover:bg-emerald-600 active:scale-95 text-white font-black uppercase tracking-[0.2em] py-6 rounded-[24px] shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/30 transition-all duration-500 mt-8 flex items-center justify-center gap-3 group overflow-hidden relative"
+            >
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shine"></div>
+              Iniciar Sessão Admin
+              <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          <% end %>
+
+          <div class="mt-14 text-center">
+            <div class="inline-flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+              <div class="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></div>
+              Portal com Criptografia de Ponta
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @keyframes fade-in {
+        from { opacity: 0; transform: scale(0.95) translateY(30px); filter: blur(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0) scale(1.1); }
+        50% { transform: translateY(-40px) scale(1.05); }
+      }
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 0.1; transform: scale(1); filter: blur(100px); }
+        50% { opacity: 0.3; transform: scale(1.2); filter: blur(130px); }
+      }
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-15px); }
+        40% { transform: translateX(15px); }
+        60% { transform: translateX(-10px); }
+        80% { transform: translateX(10px); }
+      }
+      @keyframes glow {
+        0%, 100% { text-shadow: 0 0 20px rgba(16,185,129,0.1); }
+        50% { text-shadow: 0 0 40px rgba(16,185,129,0.6); }
+      }
+      @keyframes shine {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+      .animate-fade-in { animation: fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .animate-float { animation: float 10s ease-in-out infinite; }
+      .animate-pulse-slow { animation: pulse-slow 12s ease-in-out infinite; }
+      .animate-shake { animation: shake 0.5s ease-in-out; }
+      .animate-glow { animation: glow 3s ease-in-out infinite; }
+      .animate-shine { animation: shine 1.5s ease-in-out infinite; }
+    </style>
+  </body>
+</html>
