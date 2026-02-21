@@ -12,6 +12,7 @@ class SuperAdmin::ApplicationController < Administrate::ApplicationController
   helper_method :render_vue_component, :settings_open?, :settings_pages
   # authenticiation done via devise : SuperAdmin Model
   before_action :authenticate_super_admin!
+  before_action :set_global_config
 
   # Override this value to specify the number of elements to display at a time
   # on index pages. Defaults to 20.
@@ -27,6 +28,26 @@ class SuperAdmin::ApplicationController < Administrate::ApplicationController
   end
 
   private
+
+  def set_global_config
+    # [UNICHAT] Force Global Branding for Super Admin
+    @global_config = {
+      'INSTALLATION_NAME' => 'Unichat',
+      'BRAND_NAME' => 'Unichat',
+      'LOGO_THUMBNAIL' => '/favicon.png',
+      'LOGO' => '/brand-assets/logo.png',
+      'LOGO_DARK' => '/brand-assets/logo.png',
+      'LOGO_SUPER_ADMIN' => '/brand-assets/logo.png'
+    }
+
+    # Override with Account Branding if available
+    return unless current_user
+
+    account = current_user.accounts.first
+    return unless account&.branding_config.present?
+
+    @global_config['LOGO_SUPER_ADMIN'] = account.branding_config['logo_super_admin'] if account.branding_config['logo_super_admin'].present?
+  end
 
   def render_vue_component(component_name, props = {})
     html_options = {
